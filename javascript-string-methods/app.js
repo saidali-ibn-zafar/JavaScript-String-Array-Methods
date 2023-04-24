@@ -68,3 +68,49 @@ s1.substring(16, 13); // if start index is greater than end, it swaps so result 
 s1.substring(-8, -4) // ''
 s1.substring(-8, 4) // as you know it starts at index zero is negative then till index 4 result : 'The '
 s1.substring(8, -4) // -4 would be 0 then swap and from 0 to 8 = 'The morn'
+
+
+
+// ================================================================
+// #07 String.includes()
+// string.includes(searchString);
+// string.includes(searchString, position);
+const sentence = 'The quick brown fox jumped over the lazy dog';
+// INCLUDES is case sensitive
+sentence.includes('fox'); // true
+sentence.includes('Fox'); // false
+sentence.includes('fox', 0); // true 
+sentence.includes('fox', 16); // true
+sentence.includes('fox', 17); // false
+
+
+
+// ================================================================
+// #08 String.startsWith();
+// string.startsWith(searchString);
+// string.startsWith(searchString, position);
+const string1 = 'Cats are the best!';
+
+const result = string1.startsWith('Cats'); // true 
+const result1 = string1.startsWith('are'); // false
+const result2 = string1.startsWith('are', 5); // true
+
+
+// #09 String.endsWith();
+// string.endsWith(searchString);
+// string.endsWith(searchString, length);
+const result3 = string1.endsWith('best!'); // true
+const result4 = string1.endsWith('best'); // false
+const result5 = string1.endsWith('best', 17); // true
+
+
+
+// ================================================================
+// #10 String.concat();
+// str1.concat(str2);
+const strN1 = "Hello"; 
+const strN2 = "World";
+
+const greeting = strN1.concat(' ', strN2);
+// or just + , += 
+const greeting1 = strN1 + ' ' + strN2;
