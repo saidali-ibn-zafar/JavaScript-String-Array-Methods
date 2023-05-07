@@ -1,3 +1,5 @@
+// const { set } = require("express/lib/application");
+
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const myName = "Saidali";
@@ -17,13 +19,13 @@ const part2 = numbers.slice(half, numbers.length);
 
 const part3 = part1.concat(part2);
 
-const mixedArr = mixedElementsJoin();
+const mixedArr = mixedElementsJoin(part1, part2);
 
-function mixedElementsJoin() {
+function mixedElementsJoin(array1, array2) {
   let arrResult = [];
   for (let i = 0; i < half; i++) {
-    arrResult.push(part1[i]);
-    arrResult.push(part2[i]);
+    arrResult.push(array1[i]);
+    arrResult.push(array2[i]);
   }
   return arrResult;
 }
@@ -199,3 +201,53 @@ const result = Array.prototype.filter.call(newArr, (x) => x <= 3);
 
 const res1 = Array.prototype.findLast.call(newArr, (x) => x > 45);
 
+// = = = = = = = = = = = = = = = = = = = = = = = = =
+// findLastIndex()
+const arr1 = [5, 12, 50, 130, 44];
+
+const isLargerNumber = (element) => element > 45;
+console.log(Array.prototype.findLastIndex.call(arr1, isLargerNumber));
+
+// = = = = = = = = = = = = = = = = = = = = = = = = =
+// flat()
+const arr2 = [0, 1, 2, [[[3, 4]]]];
+console.log(Array.prototype.flat.call(arr2, 0));
+
+// = = = = = = = = = = = = = = = = = = = = = = = = =
+// flatMap()
+const arr3 = [1, 2, 1];
+console.log(Array.prototype.flatMap.call(arr3, (x) => (x === 2 ? [2, 2] : 1)));
+
+const likeArr = {
+  length: 3,
+  0: 1,
+  1: 2,
+  2: 3,
+};
+
+console.log(Array.prototype.flatMap.call(likeArr, (x) => [x, x * 2]));
+
+console.log(
+  Array.prototype.flatMap.call(likeArr, (x) => ({
+    length: 1,
+    0: x,
+  }))
+);
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = =
+const letters = ["a", "b", "c", "a"];
+
+Array.prototype.forEach.call(letters, (x) => console.log(x));
+
+const str = "salom";
+const chars = Array.prototype.slice.call(str);
+console.log(chars);
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = =
+// from()
+// console.log(Array.from(new Set(letters)));
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = =
+// isArray()
+
+console.log(Array.isArray());
