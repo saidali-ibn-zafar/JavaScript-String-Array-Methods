@@ -251,3 +251,48 @@ console.log(chars);
 // isArray()
 
 console.log(Array.isArray());
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = =
+// reserve()
+
+const cars = ["bwn", "merce", "tesla"];
+// [...cars] creates a shallow copy, so reverse() does not mutate the original
+const reverted = [...cars].reverse();
+
+// Using slice, create newCar from myCar.
+const myHonda = {
+  color: "red",
+  wheels: 4,
+  engine: { cylinders: 4, size: 2.2 },
+};
+const myCar = [myHonda, 2, "cherry condition", "purchased 1997"];
+const newCar = myCar.slice(0, 2);
+
+console.log("myCar =", myCar);
+console.log("newCar =", newCar);
+console.log("myCar[0].color =", myCar[0].color);
+console.log("newCar[0].color =", newCar[0].color);
+
+// Change the color of myHonda.
+myHonda.color = "purple";
+console.log("The new color of my Honda is", myHonda.color);
+
+console.log("myCar[0].color =", myCar[0].color);
+console.log("newCar[0].color =", newCar[0].color);
+
+
+// const arr = [3, 1, 4, 1, 5, 9];
+// const compareFn = (a, b) => (a > b ? 1 : 0);
+// arr.sort(compareFn);  
+// console.log(arr.sort(compareFn))
+
+
+const unsortedArr = [[3], 4, [2], [5], 1, 6];
+
+function sortArr(arr) {
+  const res = Array.prototype.flat.call(arr, Infinity);
+  res.sort((a, b) => a - b);
+  return res;
+}
+
+console.log(sortArr(unsortedArr));
